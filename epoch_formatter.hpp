@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include <chrono>
 #include <ctime>
 
 #include "time_formatter.hpp"
