@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include <ios>
 #include <sstream>
 #include <string>
 
@@ -47,6 +48,7 @@ namespace lj
     {
         std::stringstream stream;
         stream << timeFormatter(time);
+        stream.setf(std::ios_base::fixed | std::ios_base::boolalpha);
         ((stream << delimiter << args), ...);
         
         return stream.str();
