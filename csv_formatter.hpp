@@ -27,15 +27,38 @@ namespace lj
         };
     }
 
-    std::string canonizeCsv(std::string&& string);
+    static inline std::string canonizeCsv(std::string&& string)
+    {
+        if (!std::any_of(string.begin(), string.end(), [](auto c){ return c == ',' || c == '"'; }))
+            return std::move(string);
+        
+        std::stringstream stream;
+        stream << '"';
+        for (auto& c : string)
+        {
+            if (c == '"')
+                stream << '"';
+            stream << c;
+        }
+        stream << '"';
+        
+        return stream.str();
+    }
 
     class CsvTimeFormatter :
         public TimeFormatter
     {
     public:
-        CsvTimeFormatter(TimeFormatter& formatter);
+        CsvTimeFormatter(TimeFormatter& formatter) :
+            formatter(formatter)
+        {
+
+        }
         
-        std::string operator()(std::time_t time) final;
+        std::string operator()(std::time_t time) final
+        {
+            return canonizeCsv(formatter(time));
+        }
         
     private:
         TimeFormatter& formatter;

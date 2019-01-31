@@ -53,8 +53,8 @@ namespace lj
     }
 
     template <typename... Args>
-    DelimitingFormatter<Args...> DelimitingFormatter<Args...>::space(DateTimeFormatter::hourMinuteSecond, " ");
+    DelimitingFormatter<Args...> DelimitingFormatter<Args...>::space(DateTimeFormatter::hourMinuteSecond(), " ");
 
     template <typename... Args>
-    DelimitingFormatter<Args...> DelimitingFormatter<Args...>::comma(DateTimeFormatter::hourMinuteSecond, ",");
+    DelimitingFormatter<Args...> DelimitingFormatter<Args...>::comma(DateTimeFormatter::hourMinuteSecond(), ",");
 }
