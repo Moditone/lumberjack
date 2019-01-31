@@ -10,6 +10,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <string>
 #include <string_view>
 #include <utility>
 
@@ -24,18 +25,22 @@ namespace lj
     {
     public:
         FileLog(Formatter<Args...>& formatter, std::string_view path);
+
+    public:
+        Formatter<Args...>& formatter;
+        const std::string path;
         
     private:
         void flush(std::time_t time, Args... args) final;
         
     private:
-        Formatter<Args...>& formatter;
         std::ofstream stream;
     };
 
     template <typename... Args>
     FileLog<Args...>::FileLog(Formatter<Args...>& formatter, std::string_view path) :
         formatter(formatter),
+        path(path),
         stream(path.data())
     {
         if (!stream.is_open())

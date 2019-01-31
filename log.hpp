@@ -34,6 +34,9 @@ namespace lj
         
         void log(Args... args);
         void log(std::time_t time, Args... args);
+
+        template <typename... Args2>
+        void operator()(Args2... args) { log(std::forward<Args2>(args)...); }
         
         void addListener(Listener& listener);
         void removeListener(Listener& listener);
@@ -61,7 +64,7 @@ namespace lj
         
         std::lock_guard<std::mutex> guard(listenersMutex);
         for (auto& listener : listeners)
-            listener->logged(time, std::forward<Args>(args)...);
+            listener->logged(*this, time, std::forward<Args>(args)...);
     }
     
     template <typename... Args>

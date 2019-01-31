@@ -8,6 +8,7 @@ install(TARGETS lumberjack
 	DESTINATION lib)
 
 set (HEADERS
+	"${CMAKE_CURRENT_SOURCE_DIR}/channel_log.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/csv_formatter.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/datetime_formatter.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/delimiting_formatter.hpp"
