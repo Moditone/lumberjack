@@ -9,7 +9,7 @@ install(TARGETS lumberjack
 
 set (HEADERS
 	"${CMAKE_CURRENT_SOURCE_DIR}/csv_formatter.hpp"
-	"${CMAKE_CURRENT_SOURCE_DIR}/datetime_formatter.hpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/date_time_formatter.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/delimiting_formatter.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/epoch_formatter.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/file_log.hpp"

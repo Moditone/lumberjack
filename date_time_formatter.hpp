@@ -1,5 +1,5 @@
 //
-//  datetime_formatter.hpp
+//  date_time_formatter.hpp
 //  logging
 //
 //  Created by Stijn Frishert on 11/20/18.
