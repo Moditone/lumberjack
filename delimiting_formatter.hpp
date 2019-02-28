@@ -12,9 +12,9 @@
 #include <sstream>
 #include <string>
 
-#include "date_time_formatter.hpp"
 #include "formatter.hpp"
 #include "time_formatter.hpp"
+#include "datetime_formatter.hpp"
 
 namespace lj
 {
@@ -34,7 +34,7 @@ namespace lj
         TimeFormatter& timeFormatter;
         std::string delimiter = " ";
     };
-
+    
     template <typename... Args>
     DelimitingFormatter<Args...>::DelimitingFormatter(TimeFormatter& timeFormatter, std::string_view delimiter) :
         timeFormatter(timeFormatter),
@@ -42,7 +42,7 @@ namespace lj
     {
         
     }
-
+    
     template <typename... Args>
     std::string DelimitingFormatter<Args...>::operator()(std::time_t time, Args... args)
     {
@@ -53,10 +53,10 @@ namespace lj
         
         return stream.str();
     }
-
+    
     template <typename... Args>
     DelimitingFormatter<Args...> DelimitingFormatter<Args...>::space(DateTimeFormatter::hourMinuteSecond(), " ");
-
+    
     template <typename... Args>
     DelimitingFormatter<Args...> DelimitingFormatter<Args...>::comma(DateTimeFormatter::hourMinuteSecond(), ",");
 }
