@@ -1,5 +1,5 @@
 //
-//  string_stream_formatter.hpp
+//  delimiting_formatter.hpp
 //  logging
 //
 //  Created by Stijn Frishert on 11/20/18.
@@ -14,7 +14,7 @@
 
 #include "formatter.hpp"
 #include "time_formatter.hpp"
-#include "datetime_formatter.hpp"
+#include "date_time_formatter.hpp"
 
 namespace lj
 {
