@@ -15,6 +15,7 @@ set (HEADERS
 	"${CMAKE_CURRENT_SOURCE_DIR}/file_log.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/fmt_formatter.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/formatter.hpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/function_log.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/json_formatter.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/log.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/stack_log.hpp"
